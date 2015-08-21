@@ -8,8 +8,7 @@
     };
 
     Observable.prototype._logObservableEvent = function() {
-        // logging disabled by default
-        //console.log(arguments);
+        console.log(arguments);
     };
 
     Observable.prototype.addObserver = function(obj) {
@@ -26,7 +25,7 @@
 
     Observable.prototype.removeObserver = function(obj) {
         for(var i = 0; i < this.dependents.length; i++) {
-          if( this.dependents[i] === obj ) {
+          if(this.dependents[i] === obj) {
             this.dependents.splice(i, 1);
             this._logObservableEvent("Removed observer: ", [this, obj]);
             return true;
